@@ -17,7 +17,7 @@ const onBeforeLift = async () => {
 
 export const App = () => {
   return (
-    <React.StrictMode>
+    // <React.StrictMode>
       <Provider store={store}>
         <PersistGate
           loading={<SplashScreen />}
@@ -29,6 +29,6 @@ export const App = () => {
           </I18nextProvider>
         </PersistGate>
       </Provider>
-    </React.StrictMode>
+    // </React.StrictMode>
   );
 };

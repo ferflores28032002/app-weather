@@ -10,5 +10,6 @@
     "MaxTemp": "Maximum Temperature",
     "MinTemp": "Minimum Temperature",
     "HumidityStatus": "Humidity",
-    "WindSpeed": "Wind Speed"
+    "WindSpeed": "Wind Speed",
+    "search": "press enter to search"
 }

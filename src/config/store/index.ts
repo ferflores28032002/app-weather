@@ -7,6 +7,9 @@ import LangSlice from "../../store/LangSlice";
 import storage from 'redux-persist/lib/storage';
 import persistReducer from "redux-persist/es/persistReducer";
 
+
+
+
 import {
   persistStore,
   FLUSH,
@@ -16,6 +19,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
+import { weatherApi } from "../../shared/services/Weather.services";
 const persistConfig = {
   key: 'root',
   storage,
@@ -23,6 +27,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   Languages: LangSlice,
+  [weatherApi.reducerPath]: weatherApi.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -37,7 +42,7 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(weatherApi.middleware)
   });
 };
 
