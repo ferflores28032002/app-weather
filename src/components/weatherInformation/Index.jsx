@@ -94,9 +94,9 @@ export const WeatherInformation = () => {
         </div>
       </div>
 
-      <div className="max-w-2xl p-4 m-5 grid grid-cols-2 gap-2 md:max-w-2x ">
+      <div className="max-w-2xl  m-5 p-4 grid grid-cols-2 gap-2 md:max-w-2x ">
         <div className="md:flex ">
-          <div className="w-[300px] md:shrink-0 md:h-full md:w-48">
+          <div className="w-[300px] pl-16 md:shrink-0 md:h-full md:w-48">
             <p className="text-gray-900 text-3xl font-semibold">Managua</p>
             <p className="text-base pt-1 text-gray-900 font-semibold">
               01/18/2023 6PM
@@ -122,17 +122,16 @@ export const WeatherInformation = () => {
         </div>
       </div>
 
-      
-
-      <div className="w-full min-h-[3rem] bg-indigo-900 px-4 pb-4 md:max-w-2xl">
-      <div className="pt-2 pb-2">
-        <p className="text-white text-lg font-semibold">
-          More weather forecast
-        </p>
-      </div>
+      <div className="w-full min-h-[3rem] bg-indigo-900 px-4 pb-4 md:max-w-2xl ">
+        <div className="pt-2 pb-2 pl-4">
+          <p className="text-white text-lg font-semibold">
+            More weather forecast
+          </p>
+        </div>
 
         <Swiper
-         navigation={true} modules={[Navigation]}
+          navigation={true}
+          modules={[Navigation]}
           slidesPerView={1}
           spaceBetween={0}
           breakpoints={{
@@ -174,83 +173,76 @@ export const WeatherInformation = () => {
               </div>
             </div>
           </SwiperSlide>
-        ))} */}       
+        ))} */}
 
-<div className="max-w-2xl max-h-48 p-2  md:max-w-2xl px-8">
-<SwiperSlide>
-            <div className="max-w-lg mx-4 bg-white rounded-lg flex justify-center items-center">
-              <div className="m-2 flex flex-col justify-center items-center">
-                <p className="text-gray-900 text-xs font-semibold">
-                  19/1/2023 8PM
-                </p>
+          <div className="max-w-2xl max-h-48 md:max-w-2xl">
+            <SwiperSlide>
+              <div className="max-w-lg mx-4 bg-white rounded-lg flex justify-center items-center">
+                <div className="m-2 flex flex-col justify-center items-center">
+                  <p className="text-gray-900 text-xs font-semibold">
+                    19/1/2023 8PM
+                  </p>
 
-                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
-                  <img
-                    src={Icons("Clear")}
-                    alt="icon"
-                    className="w-3/6 drop-shadow-md"
-                  />
-                  Clear Sky
-                </p>
+                  <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                    <img
+                      src={Icons("Clear")}
+                      alt="icon"
+                      className="w-3/1 drop-shadow-md"
+                    />
+                    Clear Sky
+                  </p>
 
-                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
-                  34ºC
-                </p>
+                  <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                    34ºC
+                  </p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
-              <div className="m-2 flex flex-col justify-center items-center">
-                <p className="text-gray-900 text-xs font-semibold">
-                  19/1/2023 8PM
-                </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
+                <div className="m-2 flex flex-col justify-center items-center">
+                  <p className="text-gray-900 text-xs font-semibold">
+                    19/1/2023 8PM
+                  </p>
 
-                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
-                  <img
-                    src={Icons("Clear")}
-                    alt="icon"
-                    className="w-3/6 drop-shadow-md"
-                  />
-                  Clear Sky
-                </p>
+                  <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                    <img
+                      src={Icons("Clear")}
+                      alt="icon"
+                      className="w-3/1 drop-shadow-md"
+                    />
+                    Clear Sky
+                  </p>
 
-                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
-                  34ºC
-                </p>
+                  <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                    34ºC
+                  </p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
-              <div className="m-2 flex flex-col justify-center items-center">
-                <p className="text-gray-900 text-xs font-semibold">
-                  19/1/2023 8PM
-                </p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
+                <div className="m-2 flex flex-col justify-center items-center">
+                  <p className="text-gray-900 text-xs font-semibold">
+                    19/1/2023 8PM
+                  </p>
 
-                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
-                  <img
-                    src={Icons("Clear")}
-                    alt="icon"
-                    className="w-3/6 drop-shadow-md"
-                  />
-                  Clear Sky
-                </p>
+                  <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                    <img
+                      src={Icons("Clear")}
+                      alt="icon"
+                      className="w-3/1 drop-shadow-md"
+                    />
+                    Clear Sky
+                  </p>
 
-                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
-                  34ºC
-                </p>
+                  <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                    34ºC
+                  </p>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-  </div>
-          
-          
-          
-          
-          
-          
-          
+            </SwiperSlide>
+          </div>
         </Swiper>
       </div>
     </div>

@@ -14,14 +14,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-screen flex items-center justify-center ">
       <Header />
-      <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
-        <div className="shadow-2xl max-w-md mx-auto max-h-full bg-white z-50 rounded-md ">
+
+        <div className="max-w-lg shadow-2xl grid grid-cols-1 gap-1 relative flex justify-center items-center max-h-full bg-white z-50 rounded-md mt-10 ml-2 mr-2 ">
           <WeatherInformation />
         </div>
         
-      </div>
     </div>
   );
 };
