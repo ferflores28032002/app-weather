@@ -6,5 +6,9 @@
         "city1": "London",
         "city2": "Toronto",
         "city3": "singapore"
-    }
+    },
+    "MaxTemp": "Maximum Temperature",
+    "MinTemp": "Minimum Temperature",
+    "HumidityStatus": "Humidity",
+    "WindSpeed": "Wind Speed"
 }

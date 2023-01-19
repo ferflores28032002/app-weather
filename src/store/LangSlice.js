@@ -6,16 +6,12 @@ export const langSlice = createSlice({
     language: localStorage.getItem("@APP_LANGUAGE") ?? "en",
   },
   reducers: {
-    switchLang: (state) => {
-      if (state.language === "en") {
-        state.language = "es";
-      } else {
-        state.language = "en";
-      }
+    selectLanguage: (state, value) => {
+      state.language = value.payload;
     },
   },
 });
 
-export const { switchLang } = langSlice.actions;
+export const { selectLanguage } = langSlice.actions;
 
 export default langSlice.reducer;
