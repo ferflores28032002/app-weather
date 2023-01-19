@@ -4,7 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+ background-color: #5b21b6;
+}
 
 *, input {
     font-family: 'Montserrat', sans-serif;
 }
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: #f59e0b;
+    font-size: 1.4rem !important;
+    
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    font-weight: bold;
+}
+
+.swiper-button-next::after {
+    margin-left: 35px;
+}
+
+.swiper-button-prev::after {
+    margin-right: 35px;
+}
+

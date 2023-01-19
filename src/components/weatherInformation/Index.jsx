@@ -2,6 +2,14 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import Icons from "../../shared/utils/Icons";
 import { Loading } from "../../shared/utils/Loading";
+import { Description } from "../Description";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css/navigation";
+import "swiper/css/bundle";
+
+// import required modules
+import { Navigation } from "swiper";
 
 export const WeatherInformation = () => {
   const { t } = useTranslation("global");
@@ -20,16 +28,7 @@ export const WeatherInformation = () => {
 
   return (
     <div>
-      {/* <input
-        type="text"
-        placeholder={t("formSearch")}
-        name="search"
-        onKeyDown={handleSubmit}
-        className="w-full outline-none border-none py-4 px-3 text-sm shadow-lg"
-      /> */}
-
       <form class="flex items-center mx-2 mt-2">
-        
         <div class="relative w-full">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
@@ -50,7 +49,7 @@ export const WeatherInformation = () => {
             type="text"
             id="simple-search"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Search"
+            placeholder={t("formSearch")}
             required
             name="search"
             onKeyDown={handleSubmit}
@@ -95,42 +94,164 @@ export const WeatherInformation = () => {
         </div>
       </div>
 
+      <div className="max-w-2xl p-4 m-5 grid grid-cols-2 gap-2 md:max-w-2x ">
+        <div className="md:flex ">
+          <div className="w-[300px] md:shrink-0 md:h-full md:w-48">
+            <p className="text-gray-900 text-3xl font-semibold">Managua</p>
+            <p className="text-base pt-1 text-gray-900 font-semibold">
+              01/18/2023 6PM
+            </p>
+
+            <p className="text-xl pr-8 pt-1 text-gray-900 font-extrabold capitalize">
+              Clear Sky
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 w-[100px] md:max-w-2xl">
+              <p className="text-xl mt-4 text-amber-500 font-extrabold">
+                12&deg;
+              </p>
+              <img
+                src={Icons("Clear")}
+                alt="icon"
+                className="w-2/2 mt-2 drop-shadow-md"
+              />
+            </div>
+          </div>
+
+          <Description />
+        </div>
+      </div>
+
       
 
-      <div className="max-w-2xl p-4 m-5 grid grid-cols-2 gap-2 md:max-w-2x ">
-      <div className="md:flex ">
-        <div className="m-2 w-[300px] md:shrink-0 mr-8 md:h-full md:w-48">
-          <p className="text-gray-900 text-3xl font-semibold">
-            Managua
-          </p>
-          <p className="text-base pt-1 text-gray-900 font-semibold">
-            01/18/2023 6PM
-          </p>
-
-          <p className="text-xl pr-8 pt-1 text-gray-900 font-extrabold capitalize">
-            Clear Sky
-          </p>
-
-          <div className="grid grid-cols-2 gap-2 w-40 md:max-w-2xl">
-            <p className="text-xl mt-8 text-amber-500 font-extrabold">
-              12&deg;
-            </p>
-            <img
-              src={Icons("Clear")} alt="icon"
-              className="w-2/2 drop-shadow-md"
-            />
-          </div>
-        </div>
-
-        
+      <div className="w-full min-h-[3rem] bg-indigo-900 px-4 pb-4 md:max-w-2xl">
+      <div className="pt-2 pb-2">
+        <p className="text-white text-lg font-semibold">
+          More weather forecast
+        </p>
       </div>
-    </div>
 
-      <div>
-        <div className="bg-indigo-700 text-white text-3xl w-full min-h-[7rem] flex items-center justify-center gap-2">
-          <h1>23&deg;|</h1>
-          <h1>45&deg;</h1>
-        </div>
+        <Swiper
+         navigation={true} modules={[Navigation]}
+          slidesPerView={1}
+          spaceBetween={0}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 0,
+            },
+          }}
+          className="mySwiper"
+        >
+          {/* {forecast.map((d, index) => (
+          <SwiperSlide key={index}>
+            <div className="max-w-lg mx-2 bg-teal-700 shadow-lg rounded-lg m-5 flex justify-center items-center">
+              <div className="m-2">
+                <p className="text-white text-base font-semibold">
+                  {datetime[index]?.datetime}
+                </p>
+
+                <p className="text-xs capitalize mt-2 pr-8 text-white font-medium md:shrink-0">
+                  <img
+                    src={`http://openweathermap.org/img/wn/${d?.weather[0].icon}@2x.png`}
+                    alt="icon"
+                    className="w-3/6 drop-shadow-md"
+                  />
+                  {DicWeather[d?.weather[0].description]}
+                </p>
+
+                <p className="text-2xl flex items-center text-amber-500 font-bold">
+                  {(d?.main.temp - 273.15).toFixed(1)}ºC
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))} */}       
+
+<div className="max-w-2xl max-h-48 p-2  md:max-w-2xl px-8">
+<SwiperSlide>
+            <div className="max-w-lg mx-4 bg-white rounded-lg flex justify-center items-center">
+              <div className="m-2 flex flex-col justify-center items-center">
+                <p className="text-gray-900 text-xs font-semibold">
+                  19/1/2023 8PM
+                </p>
+
+                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                  <img
+                    src={Icons("Clear")}
+                    alt="icon"
+                    className="w-3/6 drop-shadow-md"
+                  />
+                  Clear Sky
+                </p>
+
+                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                  34ºC
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
+              <div className="m-2 flex flex-col justify-center items-center">
+                <p className="text-gray-900 text-xs font-semibold">
+                  19/1/2023 8PM
+                </p>
+
+                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                  <img
+                    src={Icons("Clear")}
+                    alt="icon"
+                    className="w-3/6 drop-shadow-md"
+                  />
+                  Clear Sky
+                </p>
+
+                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                  34ºC
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="max-w-xs mx-4 bg-white rounded-lg flex justify-center items-center">
+              <div className="m-2 flex flex-col justify-center items-center">
+                <p className="text-gray-900 text-xs font-semibold">
+                  19/1/2023 8PM
+                </p>
+
+                <p className="text-xs capitalize mt-2 text-gray-900 font-medium md:shrink-0 flex flex-col justify-center items-center">
+                  <img
+                    src={Icons("Clear")}
+                    alt="icon"
+                    className="w-3/6 drop-shadow-md"
+                  />
+                  Clear Sky
+                </p>
+
+                <p className="text-2xl mt-2 flex items-center text-amber-500 font-bold">
+                  34ºC
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+  </div>
+          
+          
+          
+          
+          
+          
+          
+        </Swiper>
       </div>
     </div>
   );

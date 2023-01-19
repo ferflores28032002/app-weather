@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Description } from "../components/Description";
 import { Header } from "../components/Header";
 import { WeatherInformation } from "../components/weatherInformation/Index";
 
@@ -15,13 +14,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-indigo-800 ">
+    <div className="relative min-h-screen flex items-center justify-center">
       <Header />
       <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
-        <div className="shadow-2xl w-[24rem]  bg-white  z-50 rounded-md">
+        <div className="shadow-2xl max-w-md mx-auto max-h-full bg-white z-50 rounded-md ">
           <WeatherInformation />
         </div>
-        <Description />
+        
       </div>
     </div>
   );
