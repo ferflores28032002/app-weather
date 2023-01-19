@@ -15,10 +15,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-indigo-800">
+    <div className="relative min-h-screen flex items-center justify-center bg-indigo-800 ">
       <Header />
-      <div className="flex flex-col lg:flex-row gap-4 justify-center items-center">
-        <div className="shadow-2xl w-[24rem]  bg-white  z-50">
+      <div className="flex flex-col lg:flex-row gap-4 justify-center items-center ">
+        <div className="shadow-2xl w-[24rem]  bg-white  z-50 rounded-md">
           <WeatherInformation />
         </div>
         <Description />

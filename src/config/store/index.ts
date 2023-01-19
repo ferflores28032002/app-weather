@@ -5,10 +5,8 @@ import {
 } from "@reduxjs/toolkit";
 import LangSlice from "../../store/LangSlice";
 
-
-
 const rootReducer = combineReducers({
-  Languages: LangSlice
+  Languages: LangSlice,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
