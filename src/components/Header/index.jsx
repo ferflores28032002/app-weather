@@ -8,9 +8,8 @@ export const Header = () => {
 
   const { language } = useAppSelector((state) => state.Languages);
   const dispatch = useAppDispatch();
-  
+
   useEffect(() => {
-    console.log("jnejkfenfk")
     i18n.changeLanguage(language);
   }, [language]);
 

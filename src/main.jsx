@@ -1,20 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Home from "./pages/Home";
+import { Provider } from "react-redux";
 import { I18nextProvider } from "react-i18next";
 import i18next from "i18next";
 import { useAppSelector } from "./config/store/hooks";
-import { Provider } from "react-redux";
+import global_es from "./i18n/es/global.json";
 import { setupStore } from "./config/store";
 import global_en from "./i18n/en/global.json";
-import global_es from "./i18n/es/global.json";
+import Home from "./pages/Home";
 const store = setupStore();
 
-window.onbeforeunload = () => {
-  const { language } = useAppSelector((state) => state.Languages);
-  localStorage.setItem("@APP_LANGUAGE", language);
-};
 i18next.init({
   interpolation: { escapeValue: false },
   lng: localStorage.getItem("@APP_LANGUAGE") ?? "en",

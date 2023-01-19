@@ -1,22 +1,21 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
-import { useClima } from "../hooks/useClima";
 import { useEffect, useState } from "react";
-import Icons from "../helpers/Icons";
-import { Loading } from "../helpers/Loading";
+import Icons from "../../shared/utils/Icons";
+import { Loading } from "../../shared/utils/Loading";
 
-export const InfoClima = () => {
-  const { loading, data, climaActual } = useClima();
-
-  const [search, setSearch] = useState("Nicaragua");
+export const WeatherInformation = () => {
   const { t } = useTranslation("global");
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = (e) => {
     if (e.key === "Enter") {
       setSearch(e.target.value);
     }
   };
+
   useEffect(() => {
-    climaActual({ busqueda: search });
+    console.log(search);
   }, [search]);
 
   return (
@@ -29,22 +28,16 @@ export const InfoClima = () => {
         className="w-full outline-none border-none py-4 px-3 text-sm shadow-lg"
       />
 
-      <h1 className="text-center text-3xl text-gray-600 pt-8">{data?.name}</h1>
+      <h1 className="text-center text-3xl text-gray-600 pt-8">Nicaragua</h1>
 
       <div className="flex items-center justify-center gap-x-4 min-h-15rem">
         {loading ? (
           <Loading />
         ) : (
           <>
-            <h1 className="text-5xl text-gray-500">
-              {data?.main?.temp.toFixed(0)} &deg;
-            </h1>
+            <h1 className="text-5xl text-gray-500">12&deg;</h1>
 
-            <img
-              className="w-52 "
-              src={Icons(data?.weather?.[0]?.main)}
-              alt="icono"
-            />
+            <img className="w-52 " src={Icons("Clear")} alt="icon" />
           </>
         )}
       </div>
@@ -68,8 +61,8 @@ export const InfoClima = () => {
         </div>
 
         <div className="bg-indigo-700 text-white text-3xl w-full min-h-[7rem] flex items-center justify-center gap-2">
-          <h1>{data?.main?.temp_min.toFixed(0)}&deg; |</h1>
-          <h1>{data?.main?.temp_max.toFixed(0)}&deg;</h1>
+          <h1>23&deg;|</h1>
+          <h1>45&deg;</h1>
         </div>
       </div>
     </div>
