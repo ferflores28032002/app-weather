@@ -4,11 +4,8 @@ import {
   PreloadedState,
 } from "@reduxjs/toolkit";
 import LangSlice from "../../store/LangSlice";
-import storage from 'redux-persist/lib/storage';
+import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
-
-
-
 
 import {
   persistStore,
@@ -18,19 +15,19 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
+} from "redux-persist";
 import { weatherApi } from "../../shared/services/Weather.services";
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage,
-} 
+};
 
 const rootReducer = combineReducers({
   Languages: LangSlice,
   [weatherApi.reducerPath]: weatherApi.reducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
   return configureStore({
@@ -38,11 +35,11 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     preloadedState,
     devTools: true,
     middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }).concat(weatherApi.middleware)
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }).concat(weatherApi.middleware),
   });
 };
 

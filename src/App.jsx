@@ -12,7 +12,10 @@ const store = setupStore();
 const persistor = persistStore(store);
 
 const onBeforeLift = async () => {
-  await init18next();
+  setTimeout( async () => { 
+    await init18next();
+  }, 3000);
+  
 };
 
 export const App = () => {
