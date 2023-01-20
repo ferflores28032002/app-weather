@@ -1,7 +1,7 @@
 {
     "formSearch": "Buscar ciudad ...",
     "Loading": "Cargando ...",
-    "NoEncontrada": "Ciudad no encontrada",
+    "NotFound": "Ciudad no encontrada",
     "city": {
         "city1": "Londres",
         "city2": "Toronto",
