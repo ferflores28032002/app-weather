@@ -10,23 +10,23 @@ export const Description = () => {
           {/* {t("card.MaxTemp")}:{" "}
               {(forecast[0]?.main.temp_max - 273.15).toFixed(1)}ºC */}
           <img src="/temp-max.svg" alt="icon" className="drop-shadow-md" />
-          <p className="ml-2">Temperature Max: 56</p>
+          <p className="ml-2">{t('MaxTemp')}: 56</p>
         </li>
         <li className="mb-2 flex items-center pointer-events-none">
           {/* {t("card.Min-Temp")}:{" "}
               {(forecast[0]?.main.temp_min - 273.15).toFixed(1)}ºC */}
           <img src="/temp-min.svg" alt="icon" className="drop-shadow-md" />
-          <p className="ml-2">Temperature Min: 56</p>
+          <p className="ml-2">{t('MinTemp')}: 56</p>
         </li>
         <li className="mb-2 flex items-center pointer-events-none">
           {/* {t("card.Humidity-Status")}: {forecast[0]?.main.humidity}% */}
           <img src="/humidity.svg" alt="icon" className="drop-shadow-md" />
-          <p className="ml-2">Humidity: 56</p>
+          <p className="ml-2">{t('HumidityStatus')}: 56</p>
         </li>
         <li className="mb-0 flex items-center pointer-events-none">
           {/* {t("card.Wind-Speed")}: {forecast[0]?.wind.speed}m/s */}
           <img src="/wind.svg" alt="icon" className="drop-shadow-md" />
-          <p className="ml-2">Wind speed: 56</p>
+          <p className="ml-2">{t('WindSpeed')}: 56</p>
         </li>
       </ul>
     </div>

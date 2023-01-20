@@ -81,7 +81,7 @@ export const WeatherInformation = () => {
       <div className="max-w-2xl  m-5 p-4 grid grid-cols-2 gap-2 md:max-w-2x ">
         <div className="md:flex ">
           <div className="w-[300px] pl-16 md:shrink-0 md:h-full md:w-48">
-            <p className="text-gray-900 text-3xl font-semibold">Managua</p>
+            <p className="text-gray-900 text-3xl font-semibold">Nicaragua</p>
             <p className="text-base pt-1 text-gray-900 font-semibold">
               01/18/2023 6PM
             </p>
@@ -108,9 +108,7 @@ export const WeatherInformation = () => {
 
       <div className="w-full min-h-[3rem] bg-indigo-900 px-4 pb-4 md:max-w-2xl ">
         <div className="pt-2 pb-2 pl-4">
-          <p className="text-white text-lg font-semibold">
-            More weather forecast
-          </p>
+          <p className="text-white text-lg font-semibold">{t("forecasts")}</p>
         </div>
 
         <Swiper
@@ -134,31 +132,6 @@ export const WeatherInformation = () => {
           }}
           className="mySwiper"
         >
-          {/* {forecast.map((d, index) => (
-        <SwiperSlide key={index}>
-          <div className="max-w-lg mx-2 bg-teal-700 shadow-lg rounded-lg m-5 flex justify-center items-center">
-            <div className="m-2">
-              <p className="text-white text-base font-semibold">
-                {datetime[index]?.datetime}
-              </p>
-
-              <p className="text-xs capitalize mt-2 pr-8 text-white font-medium md:shrink-0">
-                <img
-                  src={`http://openweathermap.org/img/wn/${d?.weather[0].icon}@2x.png`}
-                  alt="icon"
-                  className="w-3/6 drop-shadow-md"
-                />
-                {DicWeather[d?.weather[0].description]}
-              </p>
-
-              <p className="text-2xl flex items-center text-amber-500 font-bold">
-                {(d?.main.temp - 273.15).toFixed(1)}ºC
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))} */}
-
           <div className="max-w-2xl max-h-48 md:max-w-2xl">
             <SwiperSlide>
               <div className="max-w-lg mx-4 bg-white rounded-lg flex justify-center items-center">

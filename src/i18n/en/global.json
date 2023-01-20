@@ -11,5 +11,6 @@
     "MinTemp": "Minimum Temperature",
     "HumidityStatus": "Humidity",
     "WindSpeed": "Wind Speed",
-    "search": "press enter to search"
+    "search": "press enter to search",
+    "forecasts": "More weather forecast"
 }
